@@ -57,10 +57,10 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
                 # await manager.broadcast(f"{client_id} left the chat")
                 break
             elif 'page_number_' in data:
-                await manager.send_personal_message(f"Hello, {client_id} from Overseer's fastapi websocket server.", websocket=websocket)
-                # await manager.broadcast(f"Hello, from Overseer's fastapi websocket server.")
-                await manager.broadcast(f"{client_id} left the chat")
-                manager.disconnect(websocket)
+                # await manager.send_personal_message(f"Hello, {client_id} from Overseer's fastapi websocket server.", websocket=websocket)
+                await manager.broadcast(f"Hello, from Overseer's fastapi websocket server.")
+                # await manager.broadcast(f"{client_id} left the chat")
+                # manager.disconnect(websocket)
 
     except WebSocketDisconnect:
         manager.disconnect(websocket)
